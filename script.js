@@ -130,18 +130,22 @@ function getConciergeReply(message) {
   const normalized = message.toLowerCase();
 
   if (normalized.includes("botox")) {
-    return "Botox pricing is usually customized by treatment plan, but Beauty Bank-style pricing on Aromas' public offers starts around $9 to $10 per unit. Reply with your name, preferred location, and area of concern to request a tailored quote.";
+    return "At Aromas Medspa, Botox pricing is tailored to your treatment plan, with Beauty Bank pricing publicly promoted from about $9 to $10 per unit. Share your preferred location and your name + phone number, and the team can help you schedule a personalized consultation.";
   }
 
   if (normalized.includes("morpheus8") || normalized.includes("downtime")) {
-    return "Morpheus8 typically has light downtime such as redness, warmth, and texture for a few days, although exact recovery depends on treatment depth and skin goals. I can have the team follow up with a personalized prep and recovery guide.";
+    return "Morpheus8 usually involves a few days of redness, warmth, and mild texture while the skin renews, though recovery varies based on treatment depth and your goals. If you would like, Aromas Medspa can follow up with guidance on downtime, prep, and the best location for your consultation.";
+  }
+
+  if (normalized.includes("fotona") || normalized.includes("4d")) {
+    return "Fotona 4D is a wonderful option for clients who want smoother texture, firmer skin, and a brighter, more refined look without surgery. Share your age range, primary skin concerns, and preferred Aromas Medspa location, and the team can recommend whether Fotona 4D is the right fit.";
   }
 
   if (normalized.includes("lip filler") || normalized.includes("which location")) {
-    return `Lip filler consultations can be booked at any Aromas office, and ${locationLabels[selectedLocation]} is currently selected for you. Share your name and phone number here and the team can match you with the best injector availability.`;
+    return `Lip filler consultations are available at every Aromas Medspa location, and ${locationLabels[selectedLocation]} is currently selected for you. Leave your name and phone number here, and the team can help match you with the right injector and the soonest availability.`;
   }
 
-  return `Thanks. This is where the AI concierge would capture your message, preferred location (${locationLabels[selectedLocation]}), and contact details for 24/7 lead routing. Leave your name + phone number and the front desk can follow up.`;
+  return `Thank you for reaching out to Aromas Medspa. I can note your preferred location (${locationLabels[selectedLocation]}) and pass along your details so the team can follow up with treatment guidance, availability, and next steps.`;
 }
 
 function sendConciergeMessage(message) {
